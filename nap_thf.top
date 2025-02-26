@@ -1,0 +1,59 @@
+; NOTA AL: includi sempre opls.aa per primo se usi i parametri di ligpargen assieme a joyce
+; poi, la sezione defaults non serve, perche' c'e' gia' in forcefield.itp
+; Infine, la sezione atomtypes va messa prima di includere il file itp
+
+#include "oplsaa.ff/forcefield.itp"
+
+;[ defaults ]
+;; nbfunc   comb-rule   gen-pairs  fudgeLJ  fudgeQQ
+;     1       3          no       1.0     0.0
+ 
+;NAP
+[ atomtypes ]
+; name     mass    charge    ptype    sigma         epsilon
+  H2     1.0080     0.000    A    2.42000E-01   1.25520E-01  ;     opls_806  H806
+  C1    12.0110     0.000    A    3.50000E-01   3.34720E-01  ;     opls_802  C802
+  C3    12.0110     0.000    A    3.55000E-01   2.92880E-01  ;     opls_800  C800
+  H3     1.0080     0.000    A    2.42000E-01   1.25520E-01  ;     opls_805  H805
+  C2    12.0110     0.000    A    3.55000E-01   2.92880E-01  ;     opls_801  C801
+;ISOOCTANE
+[ atomtypes ]
+  opls_818  H818     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_824  H824     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_805  C805    12.0110     0.000    A    3.50000E-01   2.76144E-01
+  opls_813  H813     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_802  C802    12.0110     0.000    A    3.50000E-01   2.76144E-01
+  opls_815  H815     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_801  C801    12.0110     0.000    A    3.50000E-01   2.76144E-01
+  opls_808  H808     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_803  C803    12.0110     0.000    A    3.50000E-01   2.76144E-01
+  opls_825  H825     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_814  H814     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_821  H821     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_820  H820     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_811  H811     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_810  H810     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_816  H816     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_800  C800    12.0110     0.000    A    3.50000E-01   2.76144E-01
+  opls_806  C806    12.0110     0.000    A    3.50000E-01   2.76144E-01
+  opls_823  H823     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_819  H819     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_804  C804    12.0110     0.000    A    3.50000E-01   2.76144E-01
+  opls_817  H817     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_812  H812     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_809  H809     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_822  H822     1.0080     0.000    A    2.50000E-01   1.25520E-01
+  opls_807  C807    12.0110     0.000    A    3.50000E-01   2.76144E-01
+
+#include "./nap_neutral.itp"
+#include "./isooctane.itp"
+
+ 
+ [ system ]
+ ; Name
+ ISO_e_NAP
+ 
+ [ molecules ]
+ ; Compound        #mols
+ NAP                1
+ ISO                56
